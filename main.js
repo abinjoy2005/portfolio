@@ -28,13 +28,26 @@ function renderData() {
     `).join('');
 
     document.getElementById('project-list').innerHTML = resumeData.projects.map((project, index) => `
-        <article class="project-card${index === 0 ? ' project-card-featured' : ''}" data-reveal>
+        <article class="project-card${index === 0 ? ' project-card-featured' : ''}${project.visual ? ` project-card-${escapeHTML(project.visual)}` : ''}" data-reveal>
             <div class="project-meta">
                 <span class="project-number">PROJECT / ${String(index + 1).padStart(2, '0')}</span>
                 <span class="project-status">${escapeHTML(project.status)}</span>
             </div>
             <h3>${escapeHTML(project.title)}</h3>
             <p>${escapeHTML(project.description)}</p>
+            ${project.highlights ? `
+                <ul class="project-highlights">
+                    ${project.highlights.map((highlight) => `<li>${escapeHTML(highlight)}</li>`).join('')}
+                </ul>
+                <div class="legal-pipeline" role="img" aria-label="Planned workflow: legal sources, hybrid retrieval, and verified citations">
+                    <span class="pipeline-label">THE RESEARCH FLOW <span>IN DEVELOPMENT</span></span>
+                    <div class="pipeline-step"><span class="pipeline-icon">01</span><span>Indian law<br><small>BNS · BNSS · BSA</small></span></div>
+                    <span class="pipeline-connector" aria-hidden="true"></span>
+                    <div class="pipeline-step"><span class="pipeline-icon">02</span><span>Hybrid retrieval<br><small>Exact + semantic</small></span></div>
+                    <span class="pipeline-connector" aria-hidden="true"></span>
+                    <div class="pipeline-step pipeline-step-final"><span class="pipeline-icon">03</span><span>Verified answer<br><small>Act · section · page</small></span></div>
+                </div>
+            ` : ''}
             <div class="project-tags">
                 ${project.tags.map((tag) => `<span class="project-tag">${escapeHTML(tag)}</span>`).join('')}
             </div>

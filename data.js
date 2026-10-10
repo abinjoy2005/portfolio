@@ -53,8 +53,10 @@ export const resumeData = {
     {
       title: "Legal IQ",
       status: "In development",
-      tags: ["AI", "LegalTech"],
-      description: "Building a legal-focused project that uses technology to make working with legal information more accessible."
+      visual: "legal",
+      tags: ["Agentic RAG", "Indian law", "FastAPI", "PostgreSQL + ChromaDB"],
+      description: "An in-development agentic RAG platform for Indian legal research across BNS, BNSS, BSA, the Constitution, and case law. Planned tools include claim verification, page-level citations, legal drafting, and case preparation.",
+      highlights: ["Page-level citations", "Old → new law crosswalk", "Lawyer / citizen access", "Retrieval evaluation"]
     },
     {
       title: "AutoShare",

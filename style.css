@@ -733,6 +733,122 @@ button:focus-visible {
   border-color: rgba(153, 202, 255, 0.15);
 }
 
+.project-card-legal {
+  min-height: 365px;
+  background:
+    radial-gradient(ellipse at 86% 48%, rgba(88, 138, 112, 0.15), transparent 42%),
+    linear-gradient(145deg, rgba(20, 39, 49, 0.98), rgba(10, 23, 34, 0.94));
+}
+
+.project-card-legal::before,
+.project-card-legal::after {
+  display: none;
+}
+
+.project-card-legal h3 {
+  max-width: 61%;
+  font-size: 32px;
+}
+
+.project-card-legal > p {
+  max-width: 61%;
+  margin-bottom: 14px;
+  font-size: 11px;
+}
+
+.project-highlights {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  max-width: 64%;
+  flex-wrap: wrap;
+  gap: 7px 13px;
+  margin: 0 0 20px;
+  padding: 0;
+  color: #c3d0d0;
+  font-size: 9px;
+  list-style: none;
+}
+
+.project-highlights li::before {
+  margin-right: 6px;
+  color: var(--accent);
+  content: "↗";
+  font-family: var(--font-mono);
+}
+
+.legal-pipeline {
+  position: absolute;
+  top: 50%;
+  right: 27px;
+  width: 28%;
+  transform: translateY(-41%);
+}
+
+.pipeline-label {
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+  margin-bottom: 11px;
+  color: #97a9b1;
+  font-family: var(--font-mono);
+  font-size: 7px;
+  letter-spacing: 0.06em;
+}
+
+.pipeline-label span {
+  color: var(--accent);
+  white-space: nowrap;
+}
+
+.pipeline-step {
+  display: grid;
+  min-height: 46px;
+  grid-template-columns: 26px 1fr;
+  align-items: center;
+  gap: 9px;
+  padding: 7px 9px;
+  border: 1px solid rgba(195, 218, 222, 0.13);
+  border-radius: 5px;
+  background: rgba(8, 17, 27, 0.63);
+  color: #dce6e3;
+  font-size: 9px;
+  line-height: 1.5;
+}
+
+.pipeline-icon {
+  display: grid;
+  width: 25px;
+  height: 25px;
+  place-items: center;
+  border: 1px solid rgba(182, 242, 139, 0.28);
+  border-radius: 50%;
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 7px;
+}
+
+.pipeline-step small {
+  color: #8fa1a9;
+  font-size: 7px;
+}
+
+.pipeline-connector {
+  display: block;
+  height: 10px;
+  margin-left: 21px;
+  border-left: 1px solid rgba(182, 242, 139, 0.34);
+}
+
+.pipeline-step-final {
+  border-color: rgba(182, 242, 139, 0.29);
+  background: rgba(36, 58, 47, 0.48);
+}
+
+.project-card-legal .project-tags {
+  max-width: 68%;
+}
+
 .project-meta {
   position: relative;
   z-index: 1;
@@ -1396,6 +1512,50 @@ body.motion-ready [data-reveal].is-visible {
     min-height: 295px;
   }
 
+  .project-card-legal {
+    min-height: 0;
+    justify-content: flex-start;
+    padding: 23px 21px 21px;
+  }
+
+  .project-card-legal h3,
+  .project-card-legal > p,
+  .project-highlights,
+  .project-card-legal .project-tags {
+    max-width: 100%;
+  }
+
+  .project-card-legal h3 {
+    font-size: 28px;
+  }
+
+  .project-card-legal > p {
+    font-size: 11px;
+  }
+
+  .project-highlights {
+    gap: 6px 11px;
+    margin-bottom: 4px;
+  }
+
+  .legal-pipeline {
+    position: relative;
+    top: auto;
+    right: auto;
+    width: 100%;
+    max-width: 300px;
+    margin: 20px 0 21px auto;
+    transform: none;
+  }
+
+  .pipeline-step {
+    min-height: 41px;
+  }
+
+  .project-card-legal .project-tags {
+    margin-top: auto;
+  }
+
   .project-card-featured h3,
   .project-card-featured > p {
     max-width: 78%;
@@ -1403,6 +1563,44 @@ body.motion-ready [data-reveal].is-visible {
 
   .project-card-featured h3 {
     font-size: 28px;
+  }
+
+  .project-card-featured.project-card-legal > p {
+    max-width: 100%;
+    font-size: 11px;
+  }
+
+  .project-card-legal .legal-pipeline {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 12px minmax(0, 1fr) 12px minmax(0, 1fr);
+    max-width: 100%;
+    margin-top: 17px;
+  }
+
+  .project-card-legal .pipeline-label {
+    grid-column: 1 / -1;
+  }
+
+  .project-card-legal .pipeline-step {
+    min-height: 78px;
+    grid-template-columns: 1fr;
+    align-content: start;
+    gap: 5px;
+    padding: 7px;
+    font-size: 7px;
+  }
+
+  .project-card-legal .pipeline-step small {
+    font-size: 6px;
+  }
+
+  .project-card-legal .pipeline-connector {
+    width: auto;
+    height: 0;
+    align-self: center;
+    margin: 0;
+    border-top: 1px solid rgba(182, 242, 139, 0.34);
+    border-left: 0;
   }
 
   .project-card-featured::before {
