@@ -59,8 +59,8 @@ export const resumeData = {
     {
       title: "AutoShare",
       status: "Built",
-      tags: ["Automation", "Web"],
-      description: "Developed a project for automating the sharing workflow and reducing repetitive manual steps."
+      tags: ["FastAPI", "Gemini", "Supabase", "Leaflet.js", "JWT & bcrypt"],
+      description: "Connects riders and drivers around Kalady and Ernakulam. Google Gemini turns natural-language ride requests into pickup, destination, and passenger details to help match a driver; Leaflet.js and browser geolocation enable live GPS tracking. Built with FastAPI on Vercel, Supabase PostgreSQL, and JWT authentication with bcrypt password hashing."
     },
     {
       title: "Travel Itinerary Planner",
